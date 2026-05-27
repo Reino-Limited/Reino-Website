@@ -35,17 +35,15 @@ export default function Faculty() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2, duration: 1 }}
               viewport={{ once: true }}
-              
-              /* MOBILE OPTIMIZATION TRIGGERS */
               tabIndex={0} 
               whileTap={{ scale: 0.98 }}
               className="group relative focus:outline-none cursor-pointer md:cursor-default"
             >
-              <div className="relative h-[450px] bg-gray-800 overflow-hidden border-b-4 border-reino-gold">
+              {/* FIX APPLIED HERE: Replaced h-[450px] with aspect-[4/5] md:aspect-[3/4] */}
+              <div className="relative aspect-[4/5] md:aspect-[3/4] max-h-[600px] bg-gray-800 overflow-hidden border-b-4 border-reino-gold">
                 <img 
                   src={member.image} 
                   alt={member.name} 
-                  /* ADDED FOCUS AND ACTIVE STATES FOR MOBILE TAPS */
                   className="w-full h-full object-cover object-top filter contrast-110 grayscale transition-all duration-1000
                              group-hover:grayscale-0 group-focus:grayscale-0 group-active:grayscale-0 
                              group-hover:scale-105 group-focus:scale-105 group-active:scale-105" 
