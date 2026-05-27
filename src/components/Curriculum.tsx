@@ -5,138 +5,159 @@ const curriculumData = [
   {
     weeks: "Weeks 1-3",
     phase: "Phase One",
-    title: "Strategic Infrastructure",
-    description: "Aligning data architecture with organizational goals for unparalleled growth.",
-    points: ["Data Architecture Basics", "Ecosystem Mapping", "Pipeline Deployment"]
+    title: "DATA ARCHITECTURE",
+    description: "Transitioning from \"Spreadsheet User\" to \"Data Architect.\" We master complex logic and data structures before touching any visuals.",
+    points: ["Advanced Excel for Decision Support", "Data Cleaning & Power Query Automation", "The Logic of Relational Databases"],
+    align: "right" // Placed on the right side of the timeline on desktop
   },
   {
     weeks: "Weeks 4-6",
     phase: "Phase Two",
-    title: "Infrastructure & SQL",
+    title: "INFRASTRUCTURE & SQL",
     description: "Mastering the language of databases to pull raw value from the source and connect disparate data points.",
-    points: ["SQL Foundations", "Advanced Joins & Aggregations", "Corporate Query Optimization"]
+    points: ["SQL Foundations", "Advanced Joins & Aggregations", "Corporate Query Optimization"],
+    align: "left" // Placed on the left side of the timeline on desktop
   },
   {
     weeks: "Weeks 7-9",
     phase: "Phase Three",
-    title: "Executive Visualization",
-    description: "Power BI and the psychology of data storytelling for executive presentation.",
-    points: ["Dashboard Wireframing", "DAX Executive Metrics", "The Boardroom Pitch"]
+    title: "EXECUTIVE VISUALIZATION",
+    description: "Power BI and the psychology of the \"Boardroom View.\" We build cinematic dashboards that drive immediate action.",
+    points: ["DAX Modeling & Complex KPIs", "High-Fidelity UI/UX Dashboard Design", "The \"Decision Intelligence\" Storytelling Framework"],
+    align: "right" // Placed on the right side of the timeline on desktop
   }
 ];
 
 export default function Curriculum() {
   return (
     <section className="bg-reino-navy py-24 px-4 relative overflow-hidden">
-      {/* Premium Background Lighting Orb */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-reino-gold/5 blur-[150px] pointer-events-none rounded-full" />
-
-      <div className="max-w-4xl mx-auto text-center mb-20 relative z-10">
-        <span className="text-reino-gold text-sm font-bold tracking-[0.4em] uppercase mb-4 block">
-          The Curriculum
-        </span>
-        <h2 className="text-white text-3xl md:text-5xl font-serif font-semibold uppercase tracking-wide">
-          The Analytics Blueprint
-        </h2>
+      
+      {/* FAINT BACKGROUND PARTICLE NODES & CONSTELLATION LINES */}
+      <div className="absolute inset-0 opacity-15 pointer-events-none z-0">
+        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <patterndiv id="particles" width="200" height="200" patternUnits="userSpaceOnUse">
+            <line x1="10" y1="10" x2="120" y2="90" stroke="rgba(212,175,55,0.15)" strokeWidth="1" />
+            <line x1="120" y1="90" x2="50" y2="170" stroke="rgba(212,175,55,0.15)" strokeWidth="1" />
+            <line x1="50" y1="170" x2="190" y2="130" stroke="rgba(212,175,55,0.15)" strokeWidth="1" />
+            <circle cx="10" cy="10" r="2" fill="rgba(212,175,55,0.4)" />
+            <circle cx="120" cy="90" r="3" fill="rgba(212,175,55,0.3)" />
+            <circle cx="50" cy="170" r="2" fill="rgba(212,175,55,0.5)" />
+            <circle cx="190" cy="130" r="2.5" fill="rgba(212,175,55,0.3)" />
+          </patterndiv>
+          <rect width="100%" height="100%" fill="url(#particles)" />
+        </svg>
       </div>
 
-      {/* MASTER CONTAINER: Left-timeline on mobile, Center-timeline with alternating boxes on desktop */}
-      <div className="max-w-6xl mx-auto relative pl-8 md:pl-0">
-        
-        {/* Timeline Center-line (Desktop) / Left-line (Mobile) */}
-        <div className="absolute top-0 bottom-0 left-4 md:left-1/2 md:-translate-x-1/2 w-0.5 bg-gradient-to-b from-reino-gold/40 via-reino-gold/10 to-transparent" />
+      {/* HEADER SECTION */}
+      <div className="max-w-4xl mx-auto text-center mb-20 relative z-10">
+        <span className="text-reino-gold text-sm font-bold tracking-[0.4em] uppercase mb-4 block">
+          THE CURRICULUM
+        </span>
+        <h2 className="text-white text-3xl md:text-5xl font-serif font-semibold uppercase tracking-wide">
+          THE 12-WEEK BLUEPRINT
+        </h2>
+        <p className="text-reino-muted text-sm md:text-base max-w-2xl mx-auto mt-4 font-sans font-normal opacity-80">
+          A structured, high-intensity progression from tactical tool mastery to executive-level strategic intuition.
+        </p>
+      </div>
 
-        <div className="space-y-16 relative z-10">
+      {/* MAIN TIMELINE SYSTEM */}
+      <div className="max-w-6xl mx-auto relative pl-8 md:pl-0 z-10">
+        
+        {/* Continuous Timeline Center Line */}
+        <div className="absolute top-0 bottom-0 left-4 md:left-1/2 md:-translate-x-1/2 w-0.5 bg-gradient-to-b from-reino-gold/40 via-reino-gold/20 to-transparent" />
+
+        <div className="space-y-16 relative">
           {curriculumData.map((item, index) => {
-            const isEven = index % 2 === 0;
-            
+            const isLeftAlignedCard = item.align === "left";
+
             return (
-              <div key={index} className="flex flex-col md:flex-row md:justify-between items-stretch relative w-full">
-                
-                {/* Timeline Node Point */}
-                <div className="absolute -left-8 md:left-1/2 md:-translate-x-1/2 top-6 w-8 h-8 rounded-full bg-reino-gold text-reino-navy flex items-center justify-center font-sans font-bold text-sm border-4 border-reino-navy shadow-[0_0_15px_rgba(212,175,55,0.3)] z-20">
+              <div 
+                key={index} 
+                className={`flex flex-col md:flex-row items-stretch relative w-full ${
+                  isLeftAlignedCard ? "md:flex-row-reverse" : ""
+                }`}
+              >
+                {/* Timeline Number Badge Point */}
+                <div className="absolute -left-8 md:left-1/2 md:-translate-x-1/2 top-8 w-8 h-8 rounded-full bg-reino-gold text-reino-navy flex items-center justify-center font-sans font-bold text-sm border-4 border-reino-navy shadow-[0_0_15px_rgba(212,175,55,0.2)] z-30">
                   {index + 1}
                 </div>
 
-                {/* Left Side Content Container (Desktop Only - Empty for Odd entries) */}
-                <div className={`hidden md:block w-[45%] ${isEven ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-                  {isEven && <CurriculumCard item={item} />}
+                {/* Left/Right Balance Wrapper for Desktop Grid Systems */}
+                <div className="w-full md:w-[46%] text-left">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ 
+                      opacity: 1, 
+                      y: 0,
+                      borderColor: "rgba(212, 175, 55, 0.15)",
+                      boxShadow: "0px 10px 30px rgba(0,0,0,0.4)"
+                    }}
+                    whileHover={{ 
+                      scale: 1.01,
+                      borderColor: "rgba(212, 175, 55, 0.7)",
+                      boxShadow: "0px 15px 35px rgba(212, 175, 55, 0.15)"
+                    }}
+                    whileTap={{ scale: 0.99 }}
+                    transition={{ duration: 0.4 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    className={`bg-white/[0.02] p-6 sm:p-8 border border-white/10 backdrop-blur-md rounded-sm relative group transition-all duration-300 ${
+                      isLeftAlignedCard ? "md:text-right" : "text-left"
+                    }`}
+                  >
+                    {/* Decorative Corner Glow Point on Active Hover */}
+                    <div className={`absolute w-1.5 h-1.5 rounded-full bg-reino-gold opacity-0 group-hover:opacity-100 transition-opacity top-3 ${
+                      isLeftAlignedCard ? "left-3" : "right-3"
+                    }`} />
+
+                    {/* Meta Label Wrapper */}
+                    <div className={`flex items-center gap-3 mb-4 text-xs font-sans font-bold tracking-widest uppercase ${
+                      isLeftAlignedCard ? "md:justify-end justify-start" : "justify-start"
+                    }`}>
+                      <span className="text-reino-gold">{item.weeks}</span>
+                      <span className="text-white/20">|</span>
+                      <span className="text-white/50">{item.phase}</span>
+                    </div>
+
+                    {/* Course Header Title */}
+                    <h3 className="text-white text-xl sm:text-2xl font-serif font-semibold mb-4 uppercase tracking-tight leading-tight">
+                      {item.title}
+                    </h3>
+
+                    {/* Course Card Summary Narrative */}
+                    <p className="text-reino-muted text-sm sm:text-base mb-6 font-sans font-normal leading-relaxed opacity-90">
+                      {item.description}
+                    </p>
+
+                    {/* DYNAMIC CHECKLIST: Swaps text layout directions responsively based on device viewports */}
+                    <ul className={`space-y-3.5 font-sans text-sm text-white/90 ${
+                      isLeftAlignedCard 
+                        ? "md:items-end md:justify-end flex flex-col items-start justify-start" 
+                        : "flex flex-col items-start justify-start"
+                    }`}>
+                      {item.points.map((point, idx) => (
+                        <li 
+                          key={idx} 
+                          className={`flex items-start gap-3 w-full max-w-md ${
+                            isLeftAlignedCard ? "md:flex-row-reverse md:text-right text-left" : "text-left"
+                          }`}
+                        >
+                          {/* Checkmark Icon Container */}
+                          <Check className="text-reino-gold w-4 h-4 mt-0.5 shrink-0" size={16} />
+                          <span className="tracking-wide font-normal block w-full">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
                 </div>
 
-                {/* Right Side Content Container (Desktop Only - Empty for Even entries) */}
-                <div className={`hidden md:block w-[45%] ${!isEven ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-                  {!isEven && <CurriculumCard item={item} />}
-                </div>
-
-                {/* Mobile View Content Container (Strictly forces uniform alignment on small screens) */}
-                <div className="block md:hidden w-full text-left">
-                  <CurriculumCard item={item} />
-                </div>
-
+                {/* Dead Space Spacer Node for Desktop Double Column Matrix */}
+                <div className="hidden md:block w-[46%]" />
               </div>
             );
           })}
         </div>
       </div>
     </section>
-  );
-}
-
-// STYLISH CARD COMPONENT WITH INTEGRATED MOBILE TAP & VIEWPORT TOUCH GLOW EFFECTS
-function CurriculumCard({ item }: { item: typeof curriculumData[0] }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ 
-        opacity: 1, 
-        y: 0,
-        borderColor: "rgba(212, 175, 55, 0.25)",
-        boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.5), inset 0px 1px 1px rgba(255,255,255,0.05)"
-      }}
-      whileHover={{ 
-        scale: 1.02, 
-        borderColor: "rgba(212, 175, 55, 0.6)",
-        boxShadow: "0px 15px 40px rgba(212, 175, 55, 0.15)"
-      }}
-      whileTap={{ 
-        scale: 0.98,
-        borderColor: "rgba(212, 175, 55, 0.8)",
-        backgroundColor: "rgba(255, 255, 255, 0.05)"
-      }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      viewport={{ once: true, margin: "-50px" }}
-      className="bg-white/[0.03] p-6 sm:p-8 border border-white/10 backdrop-blur-md rounded-sm text-left h-full flex flex-col justify-between transition-colors duration-300 select-none"
-    >
-      <div className="text-left w-full">
-        <div className="flex items-center gap-3 mb-3 text-left justify-start">
-          <span className="text-reino-gold text-xs font-bold tracking-widest uppercase font-sans">
-            {item.weeks}
-          </span>
-          <span className="text-white/20 text-xs">|</span>
-          <span className="text-white/50 text-xs uppercase tracking-wider font-sans font-medium">
-            {item.phase}
-          </span>
-        </div>
-
-        {/* Fluid Responsive Typography: Scales dynamically down on mobile devices */}
-        <h3 className="text-white text-xl sm:text-2xl font-serif font-semibold mb-4 uppercase tracking-tight break-words leading-tight text-left w-full">
-          {item.title}
-        </h3>
-
-        <p className="text-reino-muted text-sm sm:text-base mb-6 font-sans font-normal leading-relaxed text-left w-full">
-          {item.description}
-        </p>
-      </div>
-
-      {/* STRICT LEFT ALIGNMENT SECURITY FOR CHECKLIST ITEMS */}
-      <ul className="space-y-3.5 text-left w-full block justify-start items-start">
-        {item.points.map((point, idx) => (
-          <li key={idx} className="flex items-start justify-start gap-3 text-white/90 text-xs sm:text-sm text-left w-full">
-            <Check className="text-reino-gold w-4 h-4 mt-0.5 shrink-0" size={16} />
-            <span className="font-sans font-normal text-left block w-full tracking-wide">{point}</span>
-          </li>
-        ))}
-      </ul>
-    </motion.div>
   );
 }
