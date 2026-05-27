@@ -5,7 +5,7 @@ const faculty = [
   {
     name: 'SHARON ONI',
     role: 'Founder & Lead Strategist, REINO',
-    bio: 'Bridging the gap between data infrastructure and human decision-making. Experience with TEDx, Adullam, and global consulting',
+    bio: 'Bridging the gap between data infrastructure and human decision-making. Experience with TEDx, Adullam, and global consulting.',
     linkedin: 'https://www.linkedin.com/in/iamsharononi',
     image: '/principal.jpg'
   },
