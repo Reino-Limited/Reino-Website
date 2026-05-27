@@ -5,7 +5,7 @@ const faculty = [
   {
     name: 'SHARON ONI',
     role: 'Founder & Lead Strategist, REINO',
-    bio: 'Bridging the gap between data infrastructure and human decision-making. Experience with TEDx, Adullam, and global consulting.',
+    bio: 'Bridging the gap between data infrastructure and human decision-making. Experience with TEDx, global consulting, and teaching data analysis.',
     linkedin: 'https://www.linkedin.com/in/iamsharononi',
     image: '/principal.jpg'
   },
@@ -35,16 +35,23 @@ export default function Faculty() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2, duration: 1 }}
               viewport={{ once: true }}
-              className="group relative"
+              
+              /* MOBILE OPTIMIZATION TRIGGERS */
+              tabIndex={0} 
+              whileTap={{ scale: 0.98 }}
+              className="group relative focus:outline-none cursor-pointer md:cursor-default"
             >
               <div className="relative h-[450px] bg-gray-800 overflow-hidden border-b-4 border-reino-gold">
                 <img 
                   src={member.image} 
                   alt={member.name} 
-                  className="w-full h-full object-cover object-top filter contrast-110 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" 
+                  /* ADDED FOCUS AND ACTIVE STATES FOR MOBILE TAPS */
+                  className="w-full h-full object-cover object-top filter contrast-110 grayscale transition-all duration-1000
+                             group-hover:grayscale-0 group-focus:grayscale-0 group-active:grayscale-0 
+                             group-hover:scale-105 group-focus:scale-105 group-active:scale-105" 
                 />
               </div>
-              <div className="pt-6 pb-12 bg-reino-navy">
+              <div className="pt-6 pb-12 bg-reino-navy transition-colors duration-300 group-focus:bg-white/[0.02] group-active:bg-white/[0.02] md:group-focus:bg-reino-navy md:group-active:bg-reino-navy">
                 <h4 className="text-2xl font-serif font-extrabold text-white uppercase">{member.name}</h4>
                 <p className="text-reino-gold uppercase tracking-widest text-xs font-extrabold mb-4 font-sans">{member.role}</p>
                 <p className="text-reino-muted leading-relaxed mb-4 font-sans font-normal">{member.bio}</p>
