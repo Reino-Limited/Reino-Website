@@ -34,7 +34,8 @@ const curriculumData = [
 
 export default function Curriculum() {
   return (
-    <section className="bg-reino-navy py-24 px-4 relative overflow-hidden font-sans">
+    {/* THE FIX: Added id="curriculum" right here to catch the click from the Navbar */}
+    <section id="curriculum" className="bg-reino-navy py-24 px-4 relative overflow-hidden font-sans">
       
       {/* FAINT BACKGROUND PARTICLE NODES & CONSTELLATION LATTICE */}
       <div className="absolute inset-0 opacity-[0.06] pointer-events-none z-0">
